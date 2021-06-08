@@ -1,19 +1,19 @@
 # Site settings
-title: Jekyll-Uno
-description: 'Jekyll-Uno - a minimal, responsive theme for Jekyll'
-url: 'http://joshgerdes.com/jekyll-uno'
-baseurl: '/jekyll-uno'
+title: Kim Hyun Su
+description: '프로그래밍을 공부 중 입니다.'
+url: 'http://joshgerdes.com/'
+baseurl: ''
 # google_analytics: 'UA-XXXXXX-X'
 # disqus_shortname: 'your-disqus-name'
 # disable_landing_page: true
 
 author:
-  name: 'Josh Gerdes'
-  email: josh@joshgerdes.com
-  twitter_username: joshgerdes
-  facebook_username: joshgerdes
-  github_username:  joshgerdes
-  linkedin_username:  joshgerdes
+  name: 'Kim Hyun Su'
+  email: me_2_day_@naver.com
+  # twitter_username: joshgerdes
+  instagram_username: al_one__ways
+  github_username:  al-one-ways
+  # linkedin_username:  joshgerdes
 
 defaults:
   -
