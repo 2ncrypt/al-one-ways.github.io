@@ -18,7 +18,7 @@ exclude: 'yes'
       }
     })
 
-    if (window.location.hash && window.location.hash == '/tags/#') {
+    if (window.location.hash && window.location.hash == '#blog') {
       $('.panel-cover').addClass('panel-cover--collapsed')
     }
 
