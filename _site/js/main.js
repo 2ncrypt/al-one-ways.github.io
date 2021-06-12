@@ -12,7 +12,7 @@
       }
     })
 
-    if (window.location.hash && window.location.hash == '#blog') {
+    if (window.location.hash && window.location.hash == '/tags/#') {
       $('.panel-cover').addClass('panel-cover--collapsed')
     }
 
