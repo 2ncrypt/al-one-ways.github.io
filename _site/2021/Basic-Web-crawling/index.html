@@ -7,7 +7,12 @@
   
 
   <title>Basic Web crawling </title>
-  <meta name="description" content="You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve --watch, which launches a web server and auto-regenerates your site when a file is updated.
+  <meta name="description" content="In [31]:
+import requests
+from bs4 import BeautifulSoup
+#라이브러리 임포트 
+#requests : 웹페이지 가져오기 라이브러리
+#bs4(beautifulsoup) : 웹페이지 분석 라이브러리
 
 ">
   <meta name="author" content="Kim Hyun Su">
@@ -19,7 +24,12 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Basic Web crawling ">
-  <meta name="twitter:description" content="You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve --watch, which launches a web server and auto-regenerates your site when a file is updated.
+  <meta name="twitter:description" content="In [31]:
+import requests
+from bs4 import BeautifulSoup
+#라이브러리 임포트 
+#requests : 웹페이지 가져오기 라이브러리
+#bs4(beautifulsoup) : 웹페이지 분석 라이브러리
 
 ">
   
@@ -27,7 +37,12 @@
 
   <meta property="og:type" content="article">
   <meta property="og:title" content="Basic Web crawling ">
-  <meta property="og:description" content="You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve --watch, which launches a web server and auto-regenerates your site when a file is updated.
+  <meta property="og:description" content="In [31]:
+import requests
+from bs4 import BeautifulSoup
+#라이브러리 임포트 
+#requests : 웹페이지 가져오기 라이브러리
+#bs4(beautifulsoup) : 웹페이지 분석 라이브러리
 
 ">
   <meta property="og:image" content="/images/favicons/favicon-194x194.png" />
@@ -52,7 +67,7 @@
   <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
   <meta name="theme-color" content="#ffffff">
   
-  <link rel="stylesheet" href="/css/main.css?1623492429064607000">
+  <link rel="stylesheet" href="/css/main.css?1623495054044085000">
   <link rel="canonical" href="http://localhost:4000/2021/Basic-Web-crawling/">
   <link rel="alternate" type="application/rss+xml" title="Kim Hyun Su" href="/feed.xml">
 </head>
@@ -78,10 +93,11 @@
         <p class="panel-cover__description">인공지능과 프로그래밍을 공부 중 입니다.</p>
         <hr class="panel-cover__divider panel-cover__divider--secondary">
         <!-- 자기소개서 -->
+        <br>
         <a class="blog-button" style="
         background-color: hsla(270, 2%, 48%, 0.473);
   color: white;
-  padding: 0.5em 0.5em;
+  padding: 0.2em 0.5em;
   border: none;
   transition: all .3s ease;
   border-radius: 5px;
@@ -93,6 +109,7 @@
   font-weight: bold;
         " href="/myself.html" title="link to Kim Hyun Su All Post"
           >About Me</a>
+          <br>
         <hr class="panel-cover__divider">
 
         <div class="navigation-wrapper">
@@ -173,21 +190,26 @@
   </header>
 
   <section class="post">
-    <p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve --watch</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+    <p>In [31]:
+import requests
+from bs4 import BeautifulSoup
+#라이브러리 임포트 
+#requests : 웹페이지 가져오기 라이브러리
+#bs4(beautifulsoup) : 웹페이지 분석 라이브러리</p>
 
-<p>To add new posts, simply add a file in the <code class="language-plaintext highlighter-rouge">_posts</code> directory that follows the convention <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+<p>res = requests.get(‘https://v.media.daum.net/v/20170615203441266’)
+#웹페이지 가져오기</p>
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+<p>soup = BeautifulSoup(res.content,’html.parser’)
+#웹페이지 파싱하기</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span>
-</code></pre></div></div>
+<p>mydata = soup.find(‘title’)
+#필요한 데이터 추출하기</p>
 
-<p>Check out the <a href="http://jekyllrb.com">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://github.com/jekyll/jekyll-help">Jekyll’s dedicated Help repository</a>.</p>
-
+<p>print(mydata.get_text())
+#추출한 데이터 활용하기</p>
+<h1 id="rescontent">res.content</h1>
+<p>print(mydata)</p>
 
   </section>
   
@@ -202,7 +224,7 @@
 </footer>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="/js/main.js?1623492429064607000"></script>
+<script type="text/javascript" src="/js/main.js?1623495054044085000"></script>
 
 
     </div>
