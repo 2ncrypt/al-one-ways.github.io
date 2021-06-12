@@ -4,22 +4,23 @@ date:   2021-03-05 15:04:23
 categories: [Web_crawling]
 tags: [Web_crawling]
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve --watch`, which launches a web server and auto-regenerates your site when a file is updated.
+In [31]:
+import requests
+from bs4 import BeautifulSoup
+#라이브러리 임포트 
+#requests : 웹페이지 가져오기 라이브러리
+#bs4(beautifulsoup) : 웹페이지 분석 라이브러리
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+res = requests.get('https://v.media.daum.net/v/20170615203441266')
+#웹페이지 가져오기
 
-Jekyll also offers powerful support for code snippets:
+soup = BeautifulSoup(res.content,'html.parser')
+#웹페이지 파싱하기
 
-``` ruby
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-```
+mydata = soup.find('title')
+#필요한 데이터 추출하기
 
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
-
-[jekyll]:      http://jekyllrb.com
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-help]: https://github.com/jekyll/jekyll-help
+print(mydata.get_text())
+#추출한 데이터 활용하기
+# res.content
+print(mydata)
